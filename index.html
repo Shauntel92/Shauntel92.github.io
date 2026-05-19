@@ -1,19 +1,554 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Shauntel Hall ePortfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shauntel Hall | Computer Science ePortfolio</title>
+  <meta
+    name="description"
+    content="Shauntel Hall's Computer Science ePortfolio showcasing software engineering, algorithms and data structures, and database projects."
+  />
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #5f6f82;
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --accent: #dbeafe;
+      --border: #e5e7eb;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 84px 0 64px;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 35%),
+        linear-gradient(135deg, #ffffff 0%, #eef4ff 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary-dark);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .button.primary:hover {
+      background: var(--primary-dark);
+      color: #ffffff;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      background: #ffffff;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .button.secondary:hover {
+      border-color: var(--primary);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card h2 {
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+    }
+
+    .quick-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .quick-list strong {
+      color: var(--text);
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 780px;
+      margin-bottom: 32px;
+    }
+
+    .about-card,
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card,
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card h3,
+    .project-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .skill-card p,
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .tag {
+      background: #eef2ff;
+      color: #3730a3;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .category-list {
+      margin-top: 14px;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .category-list li {
+      margin-bottom: 8px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        align-items: flex-start;
+        gap: 14px;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Shauntel Hall ePortfolio</h1>
-  <p>Welcome to my Computer Science ePortfolio.</p>
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="logo" href="#top">Shauntel Hall</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <h2>Planned Artifact Categories</h2>
-  <ul>
-    <li>Software Engineering and Design</li>
-    <li>Algorithms and Data Structures</li>
-    <li>Databases</li>
-  </ul>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Computer Science ePortfolio</span>
+          <h1>Building practical, user-focused software solutions.</h1>
+          <p>
+            I am a Computer Science student with a focus on software engineering, data-driven problem solving,
+            and building applications that are organized, maintainable, and aligned with real user needs.
+            This portfolio highlights my capstone enhancements and selected software projects.
+          </p>
+          <div class="button-row">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button secondary" href="mailto:shauntel.n.hall@gmail.com">Contact Me</a>
+          </div>
+        </div>
 
-  <p>This portfolio will showcase enhanced software projects completed as part of my degree capstone.</p>
+        <aside class="profile-card" aria-label="Professional summary">
+          <h2>Portfolio Focus</h2>
+          <ul class="quick-list">
+            <li><strong>Degree Focus:</strong> Computer Science / Software Engineering</li>
+            <li><strong>Interests:</strong> Healthcare IT, implementation, software quality, and data systems</li>
+            <li><strong>Strengths:</strong> Analytical thinking, documentation, testing, and user-centered design</li>
+            <li><strong>Tools:</strong> Java, JavaScript, SQL, HTML/CSS, GitHub, Excel, and database concepts</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+          <p>
+            Welcome to my Computer Science ePortfolio. My work demonstrates growth across three core areas:
+            software engineering and design, algorithms and data structures, and databases. I use this portfolio
+            to showcase how I analyze existing software, identify opportunities for improvement, and enhance projects
+            with cleaner design, stronger functionality, and better maintainability.
+          </p>
+          <p style="margin-top: 14px;">
+            My background also includes healthcare coding knowledge, including ICD, CPT, and HCPCS coding concepts,
+            which gives me a unique perspective when working with healthcare data, implementation workflows,
+            and technology solutions that support clinical or operational teams.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-intro">
+          These are the core technical areas represented in my academic and project work.
+        </p>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Software Engineering & Design</h3>
+            <p>
+              Application structure, modular design, code readability, testing, documentation,
+              and maintainable feature enhancements.
+            </p>
+          </article>
+
+          <article class="skill-card">
+            <h3>Algorithms & Data Structures</h3>
+            <p>
+              Problem decomposition, efficient logic, validation workflows, collections,
+              search/filter functionality, and structured processing of user or system data.
+            </p>
+          </article>
+
+          <article class="skill-card">
+            <h3>Databases & Data Quality</h3>
+            <p>
+              SQL fundamentals, data validation, database-backed applications, data integrity,
+              and organizing information for analysis and reporting.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-intro">
+          The following projects represent my capstone artifact categories and selected portfolio work.
+          Replace the placeholder repository links with your actual GitHub project links.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Android Weight Management Application</h3>
+            <p>
+              A mobile application focused on supporting users with weight tracking and goal management.
+              The capstone enhancement emphasizes improved usability, application structure, validation,
+              and maintainable software design.
+            </p>
+            <div class="project-meta">
+              <span class="tag">Software Engineering</span>
+              <span class="tag">Android</span>
+              <span class="tag">User Experience</span>
+            </div>
+            <ul class="category-list">
+              <li>Reviewed application flow and user-facing features.</li>
+              <li>Identified opportunities to improve maintainability and usability.</li>
+              <li>Enhanced design decisions to better support future development.</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">GitHub Repository</a>
+              <a href="#" target="_blank" rel="noopener">Project Reflection</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Travlr Full Stack Web Application</h3>
+            <p>
+              A full stack web project demonstrating front-end structure, application routing,
+              back-end logic, and data-driven functionality. Enhancements focus on improving code quality,
+              data handling, and the overall application architecture.
+            </p>
+            <div class="project-meta">
+              <span class="tag">Full Stack</span>
+              <span class="tag">Web Development</span>
+              <span class="tag">Databases</span>
+            </div>
+            <ul class="category-list">
+              <li>Evaluated front-end and back-end organization.</li>
+              <li>Reviewed database interactions and data flow.</li>
+              <li>Planned improvements for reliability, scalability, and maintainability.</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">GitHub Repository</a>
+              <a href="#" target="_blank" rel="noopener">Project Reflection</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Healthcare Data Quality Project</h3>
+            <p>
+              A data-focused project involving validation of client implementation records,
+              duplicate detection, missing-field review, invalid email identification,
+              and summary reporting for implementation readiness.
+            </p>
+            <div class="project-meta">
+              <span class="tag">Excel</span>
+              <span class="tag">Data Quality</span>
+              <span class="tag">Implementation Analysis</span>
+            </div>
+            <ul class="category-list">
+              <li>Cleaned and standardized operational data.</li>
+              <li>Flagged at-risk records and quality issues.</li>
+              <li>Summarized findings for stakeholder-friendly reporting.</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">GitHub Repository</a>
+              <a href="#" target="_blank" rel="noopener">README / Case Study</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>
+              This GitHub Pages site serves as a professional portfolio for job applications,
+              presenting selected projects, technical skills, and capstone work in a clear,
+              accessible format.
+            </p>
+            <div class="project-meta">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">GitHub Pages</span>
+            </div>
+            <ul class="category-list">
+              <li>Designed a responsive portfolio layout.</li>
+              <li>Organized projects by professional relevance.</li>
+              <li>Created a structure that can be expanded as new projects are completed.</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener">GitHub Repository</a>
+              <a href="#top">Back to Top</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-card">
+          <p>
+            I am currently building my software development portfolio and seeking opportunities where I can contribute
+            to practical, mission-driven technology projects, especially in healthcare IT, implementation, data quality,
+            and software support environments.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:shauntel.n.hall@gmail.com">Email</a>
+            <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Shauntel Hall. Built with HTML, CSS, and GitHub Pages.</p>
+    </div>
+  </footer>
 </body>
 </html>
+
