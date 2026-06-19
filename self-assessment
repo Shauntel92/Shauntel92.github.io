@@ -1,0 +1,59 @@
+<main id="top">
+  <section>
+    <div class="container">
+      <span class="eyebrow">CS 499 Capstone</span>
+      <h1>Professional Self-Assessment</h1>
+
+      <p class="section-intro">
+        When I began my academic career at Southern New Hampshire University, I was all ambition with no knowledge. Now, after completing the program and developing my ePortfolio, I have transformed the way I view myself as a technology professional. I entered the program with no understanding of software development, databases, or secure coding. Through my coursework, independent practice, and capstone enhancements, I developed the ability to design, evaluate, improve, test, and communicate software solutions. My primary career goal is to apply these skills in healthcare technology, particularly in implementation analysis, healthcare software support, electronic medical record systems, and application development.
+      </p>
+
+      <article class="about-card">
+        <p>
+          The coursework prepared me for the challenges I would encounter when applying or working in the real world. I have built technical skills including programming, development, testing, databases, cybersecurity, and system design. Not only have the projects helped me move towards my goal of working in healthcare IT, but it also expanded my horizons into areas like cybersecurity, and governance, risk, and compliance. I have seen this firsthand as I was just hired as an implementation analyst for a medical software company. I used the projects and the knowledge I have gained in the program to speak confidently and professionally about my work and the skills I can offer.
+        </p>
+
+        <p style="margin-top: 14px;">
+          While much of my coursework was completed independently, there are skills that were covered that are applicable to team environments. These include practices such as version control, readable code, technical documentation, code reviews, testing records, clear naming conventions, and organized repositories. I also have my own personal work experience, not within the tech industry, which has helped to build my collaborative and communicative skills. Many of the courses have prepared me for interaction with non-technical audiences by requiring my to break down technical information for instructors and employers.
+        </p>
+
+        <p style="margin-top: 14px;">
+          Working on the enhancements of my previous projects for my capstone course, I have learned how to choose data structures based on the problem. Throughout my academic career, I have been able to work with arrays, lists, objects, trees, maps, search methods, sorting, iteration, and performance analysis. Consistent algorithm practice improved my ability to break problems into inputs, conditions, iterations, outputs, and edge cases. I learned how to evaluate time-complexity and scalability, which helped when choosing which approach to take with different artifacts. In particular, the Travlr enhancement demonstrated this growth through keyword search, numeric filtering, and sorting by multiple fields.
+        </p>
+
+        <p style="margin-top: 14px;">
+            I started the computer science program having only completed a beginners Python course. Now, I have experience with Java, Android Studio, SQLite, Angular, TypeScript, Node.js, Express, MongoDB, Mongoose, REST APIs, and Postman. I have learned how to separate user-interface logic, business logic, validation, and database operations. The database coursework taught you about schemas, data types, constraints, indexes, query performance, and data integrity. Working through the enhancements taught me that database design is not merely storing data; it includes ensuring that records are valid, unique where required, efficiently retrievable, and protected from unauthorized changes.
+        </p>
+
+        <p style="margin-top: 14px;">
+            The projects required for my Secure Coding course helped teach me how to anticipate misuse, invalid input, unauthorized access, and exposure of sensitive information. The knowledge I gained in that course influenced the security enhancements I made for my artifacts. In my Android Weight Management application, I strengthened input validation, replaced plaintext password storage with password hashing, and took permissions into consideration when handling the phone number data. With my full-stack application Travlr, I added database-backed authentication, hashed and salted passwords, JWT authentication, role-based authorization, protected CRUD routes, and safer error responses. In healthcare, robust security implementation and understanding is essential since we are working with patients sensitive health information. Additionally, I have taken steps to strengthen my knowledge outside of university coursework by sitting for and passing the Security+ exam through CompTIA.
+        </p>
+
+        <p style="margin-top: 14px;">
+            I chose the specific artifacts for enhancement as they highlight skills for both mobile and full-stack web development. The Weight Management Android Application was chosen to represent software engineering and design. While the Travlr Getaways application represents algorithms and data structures as well as databases. Together, the artifacts tell a progression story, identifying weaknesses, planning improvements, implementing them, troubleshooting problems, testing the results, and explaining the value of the work. Additionally, the accompanying code review and narratives show my ability to evaluate existing work, communicate design decisions, and reflect on technical growth.
+        </p>
+
+        <p style="margin-top: 14px;">
+            Overall, the Computer Science program and capstone strengthened both my technical abilities and my professional confidence. I am leaving the program with evidence that I can analyze complex systems, learn new tools, communicate with technical and nontechnical audiences, protect data, and persist through difficult implementation problems. These strengths position me to contribute to healthcare technology teams while continuing to grow in software development, database systems, security, and emerging technologies.
+        </p>
+
+        <div class="button-row" style="margin-top: 28px;">
+          <a class="button primary" href="index.html#artifacts">
+            Continue to Capstone Artifacts
+            <li><a href="self-assessment.html">Self-Assessment</a></li>
+            <li><a href="index.html#code-review">Code Review</a></li>
+            <li><a href="index.html#artifacts">Artifacts</a></li>
+            <li><a href="index.html#documents">Documents</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </a>
+          <a
+            class="button secondary"
+            href="documents/Professional_Self_Assessment.docx"
+            download>
+            Download Word Document
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
