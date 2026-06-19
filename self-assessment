@@ -40,17 +40,13 @@
         <div class="button-row" style="margin-top: 28px;">
           <a class="button primary" href="index.html#artifacts">
             Continue to Capstone Artifacts
-            <li><a href="self-assessment.html">Self-Assessment</a></li>
-            <li><a href="index.html#code-review">Code Review</a></li>
-            <li><a href="index.html#artifacts">Artifacts</a></li>
-            <li><a href="index.html#documents">Documents</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
           </a>
+
           <a
             class="button secondary"
             href="documents/Professional_Self_Assessment.docx"
             download>
-            Download Word Document
+              Download Word Document
           </a>
         </div>
       </article>
