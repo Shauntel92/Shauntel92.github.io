@@ -1,55 +1,518 @@
-<main id="top">
-  <section>
-    <div class="container">
-      <span class="eyebrow">CS 499 Capstone</span>
-      <h1>Professional Self-Assessment</h1>
+<!DOCTYPE html>
 
-      <p class="section-intro">
-        When I began my academic career at Southern New Hampshire University, I was all ambition with no knowledge. Now, after completing the program and developing my ePortfolio, I have transformed the way I view myself as a technology professional. I entered the program with no understanding of software development, databases, or secure coding. Through my coursework, independent practice, and capstone enhancements, I developed the ability to design, evaluate, improve, test, and communicate software solutions. My primary career goal is to apply these skills in healthcare technology, particularly in implementation analysis, healthcare software support, electronic medical record systems, and application development.
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Professional Self-Assessment | Shauntel Hall</title>
+
+<meta
+ name="description"
+ content="Shauntel Hall's professional self-assessment for the CS 499 Computer Science Capstone ePortfolio."
+/>
+
+  <style>
+    :root {
+      --bg: #fbf8ff;
+      --card: #ffffff;
+      --text: #2f2540;
+      --muted: #6f627f;
+      --primary: #8b5cf6;
+      --primary-dark: #6d28d9;
+      --gold: #c99700;
+      --gold-light: #fff4cc;
+      --accent: #efe7ff;
+      --border: #e8ddf7;
+      --shadow: 0 12px 30px rgba(79, 45, 124, 0.12);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 84px 0 64px;
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(201, 151, 0, 0.22),
+          transparent 34%
+        ),
+        radial-gradient(
+          circle at bottom right,
+          rgba(139, 92, 246, 0.18),
+          transparent 32%
+        ),
+        linear-gradient(135deg, #ffffff 0%, #f4edff 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--gold-light);
+      color: #6f5200;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 780px;
+      margin-bottom: 32px;
+    }
+
+    .about-card,
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .assessment-paragraph {
+      margin-top: 18px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--gold)
+      );
+      color: #ffffff;
+    }
+
+    .button.primary:hover {
+      background: var(--primary-dark);
+      color: #ffffff;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      background: #ffffff;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .button.secondary:hover {
+      border-color: var(--gold);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        align-items: flex-start;
+        gap: 14px;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="logo" href="index.html#top">Shauntel Hall</a>
+
+```
+    <ul class="nav-links">
+      <li>
+        <a href="self-assessment.html">Self-Assessment</a>
+      </li>
+
+      <li>
+        <a href="index.html#skills">Skills</a>
+      </li>
+
+      <li>
+        <a href="index.html#code-review">Code Review</a>
+      </li>
+
+      <li>
+        <a href="index.html#artifacts">Artifacts</a>
+      </li>
+
+      <li>
+        <a href="index.html#documents">Documents</a>
+      </li>
+
+      <li>
+        <a href="index.html#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+```
+
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">CS 499 Capstone</span>
+
+```
+    <h1>Professional Self-Assessment</h1>
+
+    <p>
+      A reflection on my development throughout the Computer Science
+      program, the professional values I have formed, and the technical
+      and communication abilities demonstrated through my capstone
+      ePortfolio.
+    </p>
+
+    <div class="button-row">
+      <a
+        class="button primary"
+        href="index.html#artifacts">
+        View Capstone Artifacts
+      </a>
+
+      <a
+        class="button secondary"
+        href="documents/Professional_Self_Assessment.docx"
+        download>
+        Download Word Document
+      </a>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="assessment-heading">
+  <div class="container">
+    <h2
+      class="section-title"
+      id="assessment-heading">
+      Professional Growth and Career Preparation
+    </h2>
+
+    <p class="section-intro">
+      This self-assessment summarizes how my academic work, capstone
+      enhancements, and professional experiences prepared me to enter
+      and contribute to the computer science field.
+    </p>
+
+    <article class="about-card">
+      <p>
+        When I began my academic career at Southern New Hampshire
+        University, I was all ambition with no knowledge. Now, after
+        completing the program and developing my ePortfolio, I have
+        transformed the way I view myself as a technology professional.
+        I entered the program with no understanding of software
+        development, databases, or secure coding. Through my coursework,
+        independent practice, and capstone enhancements, I developed the
+        ability to design, evaluate, improve, test, and communicate
+        software solutions. My primary career goal is to apply these
+        skills in healthcare technology, particularly in implementation
+        analysis, healthcare software support, electronic medical record
+        systems, and application development.
       </p>
 
-      <article class="about-card">
-        <p>
-          The coursework prepared me for the challenges I would encounter when applying or working in the real world. I have built technical skills including programming, development, testing, databases, cybersecurity, and system design. Not only have the projects helped me move towards my goal of working in healthcare IT, but it also expanded my horizons into areas like cybersecurity, and governance, risk, and compliance. I have seen this firsthand as I was just hired as an implementation analyst for a medical software company. I used the projects and the knowledge I have gained in the program to speak confidently and professionally about my work and the skills I can offer.
-        </p>
+      <p class="assessment-paragraph">
+        The coursework prepared me for the challenges I would encounter
+        when entering and working in the technology field. I built
+        technical skills in programming, software development, testing,
+        databases, cybersecurity, and system design. The projects helped
+        move me toward my goal of working in healthcare IT while also
+        expanding my interests into areas such as cybersecurity and
+        governance, risk, and compliance. I experienced the value of
+        these skills firsthand when I was hired as an implementation
+        analyst for a medical software company. During the hiring
+        process, I used the projects and knowledge I gained throughout
+        the program to speak confidently and professionally about my
+        work and the skills I could offer.
+      </p>
 
-        <p style="margin-top: 14px;">
-          While much of my coursework was completed independently, there are skills that were covered that are applicable to team environments. These include practices such as version control, readable code, technical documentation, code reviews, testing records, clear naming conventions, and organized repositories. I also have my own personal work experience, not within the tech industry, which has helped to build my collaborative and communicative skills. Many of the courses have prepared me for interaction with non-technical audiences by requiring me to break down technical information for instructors and employers.
-        </p>
+      <p class="assessment-paragraph">
+        Although much of my coursework was completed independently, the
+        program taught me practices that are directly applicable to team
+        environments. These include version control, readable code,
+        technical documentation, code reviews, testing records, clear
+        naming conventions, and organized repositories. My professional
+        experience outside the technology industry also helped me build
+        strong collaborative and communication skills. Many courses
+        prepared me to interact with nontechnical audiences by requiring
+        me to break down technical information for instructors,
+        stakeholders, and potential employers. These experiences taught
+        me that effective software development depends not only on
+        technical ability, but also on the ability to listen, clarify
+        requirements, document decisions, and explain solutions in a way
+        that different audiences can understand.
+      </p>
 
-        <p style="margin-top: 14px;">
-          Working on the enhancements of my previous projects for my capstone course, I have learned how to choose data structures based on the problem. Throughout my academic career, I have been able to work with arrays, lists, objects, trees, maps, search methods, sorting, iteration, and performance analysis. Consistent algorithm practice improved my ability to break problems into inputs, conditions, iterations, outputs, and edge cases. I learned how to evaluate time-complexity and scalability, which helped when choosing which approach to take with different artifacts. In particular, the Travlr enhancement demonstrated this growth through keyword search, numeric filtering, and sorting by multiple fields.
-        </p>
+      <p class="assessment-paragraph">
+        Working on enhancements to my previous projects during the
+        capstone helped me better understand how to choose data
+        structures based on the problem being solved. Throughout the
+        program, I worked with arrays, lists, objects, trees, maps,
+        search methods, sorting, iteration, and performance analysis.
+        Consistent algorithm practice improved my ability to break
+        problems into inputs, conditions, iterations, outputs, and edge
+        cases. I also learned to evaluate time complexity and
+        scalability when deciding which approach to use. The Travlr
+        enhancement demonstrated this growth through keyword searching,
+        numeric filtering, and sorting by multiple fields. This work
+        showed me that algorithms are not limited to abstract coding
+        exercises; they are present in practical application features
+        that help users locate, organize, and understand data.
+      </p>
 
-        <p style="margin-top: 14px;">
-            I started the computer science program having only completed a beginner's Python course. Now, I have experience with Java, Android Studio, SQLite, Angular, TypeScript, Node.js, Express, MongoDB, Mongoose, REST APIs, and Postman. I have learned how to separate user-interface logic, business logic, validation, and database operations. The database coursework taught me about schemas, data types, constraints, indexes, query performance, and data integrity. Working through the enhancements taught me that database design is not merely storing data; it includes ensuring that records are valid, unique where required, efficiently retrievable, and protected from unauthorized changes.
-        </p>
+      <p class="assessment-paragraph">
+        I began the Computer Science program having completed only a
+        beginner's Python course. I now have experience with Java,
+        Android Studio, SQLite, Angular, TypeScript, Node.js, Express,
+        MongoDB, Mongoose, REST APIs, and Postman. I learned how to
+        separate user-interface logic, business logic, validation, and
+        database operations. My database coursework taught me about
+        schemas, data types, constraints, indexes, query performance,
+        and data integrity. The capstone enhancements reinforced that
+        database design is not merely about storing information. It also
+        involves ensuring that records are valid, unique when required,
+        efficiently retrievable, and protected from unauthorized
+        changes.
+      </p>
 
-        <p style="margin-top: 14px;">
-            The projects required for my Secure Coding course helped teach me how to anticipate misuse, invalid input, unauthorized access, and exposure of sensitive information. The knowledge I gained in that course influenced the security enhancements I made for my artifacts. In my Android Weight Management application, I strengthened input validation, replaced plaintext password storage with password hashing, and took permissions into consideration when handling the phone number data. With my full-stack application Travlr, I added database-backed authentication, hashed and salted passwords, JWT authentication, role-based authorization, protected CRUD routes, and safer error responses. In healthcare, robust security implementation and understanding is essential since we are working with patients sensitive health information. Additionally, I have taken steps to strengthen my knowledge outside of university coursework by sitting for and passing the Security+ exam through CompTIA.
-        </p>
+      <p class="assessment-paragraph">
+        The projects completed in my Secure Coding course taught me how
+        to anticipate misuse, invalid input, unauthorized access, and
+        exposure of sensitive information. The knowledge I gained in
+        that course influenced the security enhancements I made to my
+        capstone artifacts. In the Android Weight Management
+        application, I strengthened input validation, replaced plaintext
+        password storage with password hashing, and considered
+        permissions when handling phone-number data. In the Travlr
+        full-stack application, I added database-backed authentication,
+        hashed and salted passwords, JWT authentication, role-based
+        authorization, protected CRUD routes, and safer error responses.
+        In healthcare, robust security practices are essential because
+        organizations work with patients' sensitive health information.
+        I also strengthened my knowledge outside university coursework
+        by studying for and passing the CompTIA Security+ examination.
+      </p>
 
-        <p style="margin-top: 14px;">
-            I chose the specific artifacts for enhancement as they highlight skills for both mobile and full-stack web development. The Weight Management Android Application was chosen to represent software engineering and design. While the Travlr Getaways application represents algorithms and data structures as well as databases. Together, the artifacts tell a progression story, identifying weaknesses, planning improvements, implementing them, troubleshooting problems, testing the results, and explaining the value of the work. Additionally, the accompanying code review and narratives show my ability to evaluate existing work, communicate design decisions, and reflect on technical growth.
-        </p>
+      <p class="assessment-paragraph">
+        I selected the capstone artifacts because they demonstrate
+        skills in both mobile and full-stack web development. The Weight
+        Management Android Application represents software engineering
+        and design. The Travlr Getaways application represents
+        algorithms and data structures as well as databases. Together,
+        the artifacts tell a progression story: identifying weaknesses,
+        planning improvements, implementing enhancements,
+        troubleshooting problems, testing results, and explaining the
+        value of the completed work. The accompanying code review and
+        narratives further demonstrate my ability to evaluate existing
+        software, communicate technical decisions, and reflect on my
+        growth.
+      </p>
 
-        <p style="margin-top: 14px;">
-            Overall, the Computer Science program and capstone strengthened both my technical abilities and my professional confidence. I am leaving the program with evidence that I can analyze complex systems, learn new tools, communicate with technical and nontechnical audiences, protect data, and persist through difficult implementation problems. These strengths position me to contribute to healthcare technology teams while continuing to grow in software development, database systems, security, and emerging technologies.
-        </p>
+      <p class="assessment-paragraph">
+        Overall, the Computer Science program and capstone strengthened
+        both my technical abilities and my professional confidence. I am
+        leaving the program with evidence that I can analyze complex
+        systems, learn unfamiliar tools, communicate with technical and
+        nontechnical audiences, protect data, and persist through
+        difficult implementation problems. These strengths position me
+        to contribute to healthcare technology teams while continuing
+        to grow in software development, database systems, security, and
+        emerging technologies.
+      </p>
 
-        <div class="button-row" style="margin-top: 28px;">
-          <a class="button primary" href="index.html#artifacts">
-            Continue to Capstone Artifacts
-          </a>
+      <div
+        class="button-row"
+        style="margin-top: 28px;">
+        <a
+          class="button primary"
+          href="index.html#artifacts">
+          Continue to Capstone Artifacts
+        </a>
 
-          <a
-            class="button secondary"
-            href="documents/Professional_Self_Assessment.docx"
-            download>
-              Download Word Document
-          </a>
-        </div>
-      </article>
+        <a
+          class="button secondary"
+          href="documents/Professional_Self_Assessment.docx"
+          download>
+          Download Word Document
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact-card">
+      <p>
+        I am interested in opportunities involving software development,
+        healthcare technology, implementation, data quality, secure
+        systems, and user-focused problem solving.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:shauntel.n.hall@gmail.com">
+          Email
+        </a>
+
+        <a
+          href="https://github.com/Shauntel92"
+          target="_blank"
+          rel="noopener noreferrer">
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/hallshauntel/"
+          target="_blank"
+          rel="noopener noreferrer">
+          LinkedIn
+        </a>
+      </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
+```
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        &copy; 2026 Shauntel Hall. Built with HTML, CSS, and GitHub Pages.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
